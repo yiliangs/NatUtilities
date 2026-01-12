@@ -12,15 +12,6 @@ namespace NatBase
 {
     public static partial class NatUtil
     {
-        private static byte[] osbyte = Encoding.UTF8.GetBytes($"{oscard}");
-        private static byte[] ubyte = Encoding.UTF8.GetBytes($"{ucard}");
-        
-        // geometries that proven to be problematic
-        private static readonly string[] CrptGeomFlags = new string[] { "Wm1sa1pXeHBidz09", "YnJva2VuIGdlbw==" };
-        private static byte[] geoType = osbyte ?? Guid.Empty.ToByteArray();
-        private static byte[] geoHash = ubyte ?? Guid.Empty.ToByteArray();
-
-
         /// <summary>
         /// Creates a new block definition in the active document with a unique name ("Block 01", "Block 02", ...).
         /// </summary>
@@ -635,23 +626,6 @@ namespace NatBase
                 default:
                     return gb;
             }
-        }
-
-        /// <summary>
-        /// Obsolete massing collection behavior (deletes Brep/Extrusion objects).
-        /// </summary>
-        public static void MassingCollection_OBSOLETE(List<RhinoObject> rhObjs)
-        {
-            rhObjs.ForEach(ro => MassingCollection_OBSOLETE(ro));
-        }
-
-        /// <summary>
-        /// Obsolete massing collection behavior (deletes Brep/Extrusion objects).
-        /// </summary>
-        public static void MassingCollection_OBSOLETE(RhinoObject rhObj)
-        {
-            if (rhObj.Geometry is Brep || rhObj.Geometry is Extrusion)
-                rhinoDoc.Objects.Delete(rhObj.Id, true);
         }
 
         /// <summary>
