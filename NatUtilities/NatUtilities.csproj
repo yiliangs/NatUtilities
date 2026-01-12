@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nat_Enums.cs" />
+    <Compile Include="NatEnums.cs" />
     <Compile Include="NatUtil.Application.cs" />
     <Compile Include="NatUtil.ErrorHandler.cs" />
     <Compile Include="NatUtil.Extension.cs" />

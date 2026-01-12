@@ -25,7 +25,5 @@ namespace NatBase
         public static double blocktol => abstol * 2;
         public static double angtol => rhinoDoc.ModelAngleToleranceRadians;
         public static double localtol => abstol * 10;
-        public static string oscard => Environment.UserName;
-        public static string ucard => RhinoApp.LoggedInUserName;
     }
 }
